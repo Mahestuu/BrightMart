@@ -1,249 +1,78 @@
 @extends('utama.app')
+
+
 @section('content')
     <div class="judul-product" data-aos="fade-down" data-aos-delay="500">
         <h2>Beragam Produk Yang Kami Jual Untuk Anda</h2>
         <p>Makanan dan minuman berkualitas serta produk lainnya dapat meningkatkan pengalaman sehari-hari Anda. Dengan berbagai pilihan produk dari kami, Anda dapat menemukan semua yang Anda butuhkan untuk memenuhi kebutuhan sehari-hari</p>
     </div>
     
-    <section class="products" data-aos="zoom-in-right" data-aos-delay="500">
-        <h2>Produk Terlaris</h2>
+    @forelse($categories as $category)
+        <section class="products" data-aos="zoom-in-right" data-aos-delay="500">
+            <h2>{{ $category->category_name }}</h2>
             <div class="container">
                 <div class="product-scroll">
                     <div class="product-grid">
-                        <div class="product-card">
-                            <img src="{{asset('image/10000020_thumb.jpg')}}" alt="Produk 1">
-                            <h3>Indomilk Kental Manis Chocolate 370G</h3>
-                            <p>Deskripsi.</p>
-                            <span class="price">Rp 10.000</span>
-                            <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Beli Sekarang</button>
-                        </div>
-                        <div class="product-card">
-                            <img src="{{asset('image/10000088_thumb.jpg')}}" alt="Produk 2">
-                            <h3>Frisian Flag Kental Manis Coklat 370G</h3>
-                            <p>Deskripsi.</p>
-                            <span class="price">Rp 15.000</span>
-                            <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Beli Sekarang</button>
-                        </div>
-                        <div class="product-card">
-                            <img src="{{asset('image/10021008_thumb.jpg')}}" alt="Produk 3">
-                            <h3>Gulaku Gula Tebu (Kuning) 1000G</h3>
-                            <p>Deskripsi.</p>
-                            <span class="price">Rp 20.000</span>
-                            <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Beli Sekarang</button>
-                        </div>
-                        <div class="product-card">
-                            <img src="{{asset('image/20092710_thumb.jpg')}}" alt="Produk 4">
-                            <h3>Indomaret Beras Pulen Wangi Premium 5Kg</h3>
-                            <p>Deskripsi.</p>
-                            <span class="price">Rp 25.000</span>
-                            <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Beli Sekarang</button>
-                        </div>
-                        <div class="product-card">
-                            <img src="{{asset('image/20121514_thumb.jpg')}}" alt="Produk 4">
-                            <h3>Le Minerale Air Mineral 15L</h3>
-                            <p>Deskripsi.</p>
-                            <span class="price">Rp 25.000</span>
-                            <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Beli Sekarang</button>
-                        </div>
-                        <div class="product-card">
-                            <img src="{{asset('image/20032058_thumb.jpg')}}" alt="Produk 4">
-                            <h3>Frisian Flag Kental Manis 6X38G</h3>
-                            <p>Deskripsi.</p>
-                            <span class="price">Rp 25.000</span>
-                            <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Beli Sekarang</button>
-                        </div>
-                        <div class="product-card">
-                            <img src="{{asset('image/10036665_thumb.jpg')}}" alt="Produk 4">
-                            <h3>Carnation Krimer Kental Manis 365G</h3>
-                            <p>Deskripsi.</p>
-                            <span class="price">Rp 25.000</span>
-                            <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Beli Sekarang</button>
-                        </div>
-                        <div class="product-card">
-                            <img src="{{asset('image/20124726_thumb.jpg')}}" alt="Produk 4">
-                            <h3>Facial Tissue 2 Ply (2+1) 3X180's</h3>
-                            <p>Deskripsi.</p>
-                            <span class="price">Rp 25.000</span>
-                            <button class="btn"><i class="fa-solid fa-cart-shopping"></i>   Beli Sekarang</button>
-                        </div>
+                        @forelse($category->products as $product)
+                            <div class="product-card">
+                                <img src="{{ asset('products/' . $product->product_image) }}" alt="{{ $product->product_name }}">
+                                <h3>{{ $product->product_name }}</h3>
+                                <p>{{ $product->product_description }}</p>
+                                <span class="price">Rp {{ number_format($product->product_price, 0, ',', '.') }}</span>
+                                @auth
+                                    <form action="{{ route('cart.add') }}" method="POST">
+                                        @csrf
+                                        <input type="hidden" name="product_id" value="{{ $product->product_id }}">
+                                        <input type="number" name="qty" value="1" min="1" max="{{ $product->product_stock }}" class="form-control mb-2" style="width: 80px;">
+                                        <button type="submit" class="btn"><i class="fa-solid fa-cart-shopping"></i> Beli Sekarang</button>
+                                    </form>
+                                @else
+                                    <a href="{{ route('login') }}" class="btn"><i class="fa-solid fa-cart-shopping"></i> Beli Sekarang</a>
+                                @endauth
+                            </div>
+                        @empty
+                            <div class="text-center w-100">
+                                <p>Tidak ada produk tersedia untuk kategori ini saat ini.</p>
+                            </div>
+                        @endforelse
                     </div>
                 </div>
             </div>
-    </section>
-
-    <section class="products" data-aos="zoom-in-right" data-aos-delay="500" >
-        <h2>Cemilan</h2>
+        </section>
+    @empty
+        <!-- Fallback jika tidak ada kategori -->
+        <section class="products" data-aos="zoom-in-right" data-aos-delay="500">
+            <h2>Semua Produk</h2>
             <div class="container">
                 <div class="product-scroll">
                     <div class="product-grid">
-                        <div class="product-card">
-                            <img src="{{asset('image/masterpotato.jpg')}}" alt="Produk 1">
-                            <h3>Indomilk Kental Manis Chocolate 370G</h3>
-                            <p>Deskripsi.</p>
-                            <span class="price">Rp 10.000</span>
-                            <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Beli Sekarang</button>
-                        </div>
-                        <div class="product-card">
-                            <img src="{{asset('image/maxcorn.jpg')}}" alt="Produk 2">
-                            <h3>Frisian Flag Kental Manis Coklat 370G</h3>
-                            <p>Deskripsi.</p>
-                            <span class="price">Rp 15.000</span>
-                            <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Beli Sekarang</button>
-                        </div>
-                        <div class="product-card">
-                            <img src="{{asset('image/guribee.jpg')}}" alt="Produk 3">
-                            <h3>Gulaku Gula Tebu (Kuning) 1000G</h3>
-                            <p>Deskripsi.</p>
-                            <span class="price">Rp 20.000</span>
-                            <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Beli Sekarang</button>
-                        </div>
-                        <div class="product-card">
-                            <img src="{{asset('image/potabee.jpg')}}" alt="Produk 4">
-                            <h3>Indomaret Beras Pulen Wangi Premium 5Kg</h3>
-                            <p>Deskripsi.</p>
-                            <span class="price">Rp 25.000</span>
-                            <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Beli Sekarang</button>
-                        </div>
-                        <div class="product-card">
-                            <img src="{{asset('image/qtela-pedas.jpg')}}" alt="Produk 4">
-                            <h3>Le Minerale Air Mineral 15L</h3>
-                            <p>Deskripsi.</p>
-                            <span class="price">Rp 25.000</span>
-                            <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Beli Sekarang</button>
-                        </div>
-                        <div class="product-card">
-                            <img src="{{asset('image/chikiballs.jpg')}}" alt="Produk 4">
-                            <h3>Frisian Flag Kental Manis 6X38G</h3>
-                            <p>Deskripsi.</p>
-                            <span class="price">Rp 25.000</span>
-                            <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Beli Sekarang</button>
-                        </div>
-                        <div class="product-card">
-                            <img src="{{asset('image/chuba2.jpg')}}" alt="Produk 4">
-                            <h3>Carnation Krimer Kental Manis 365G</h3>
-                            <p>Deskripsi.</p>
-                            <span class="price">Rp 25.000</span>
-                            <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Beli Sekarang</button>
-                        </div>
-                        <div class="product-card">
-                            <img src="{{asset('image/pringles-bbq.webp')}}" alt="Produk 4">
-                            <h3>Facial Tissue 2 Ply (2+1) 3X180's</h3>
-                            <p>Deskripsi.</p>
-                            <span class="price">Rp 25.000</span>
-                            <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Beli Sekarang</button>
-                        </div>
-                        <div class="product-card">
-                            <img src="{{asset('image/pringles-ori.webp')}}" alt="Produk 4">
-                            <h3>Facial Tissue 2 Ply (2+1) 3X180's</h3>
-                            <p>Deskripsi.</p>
-                            <span class="price">Rp 25.000</span>
-                            <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Beli Sekarang</button>
-                        </div>
-                        <div class="product-card">
-                            <img src="{{asset('image/chitato-indomie.webp')}}" alt="Produk 4">
-                            <h3>Facial Tissue 2 Ply (2+1) 3X180's</h3>
-                            <p>Deskripsi.</p>
-                            <span class="price">Rp 25.000</span>
-                            <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Beli Sekarang</button>
-                        </div>
-                        <div class="product-card">
-                            <img src="{{asset('image/chitato-ayambbq.jpg')}}" alt="Produk 4"">
-                            <h3>Facial Tissue 2 Ply (2+1) 3X180's</h3>
-                            <p>Deskripsi.</p>
-                            <span class="price">Rp 25.000</span>
-                            <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Beli Sekarang</button>
-                        </div>
+                        @forelse($products as $product)
+                            <div class="product-card">
+                                <img src="{{ asset('products/' . $product->product_image) }}" alt="{{ $product->product_name }}">
+                                <h3 class="">{{ $product->product_name }}</h3>
+                                <p>{{ $product->product_description }}</p>
+                                <span class="price">Rp {{ number_format($product->product_price, 0, ',', '.') }}</span>
+                                @auth
+                                    <form action="{{ route('cart.add') }}" method="POST">
+                                        @csrf
+                                        <input type="hidden" name="product_id" value="{{ $product->product_id }}">
+                                        <input type="number" name="qty" value="1" min="1" max="{{ $product->product_stock }}" class="form-control mb-2" style="width: 80px;">
+                                        <button type="submit" class="btn"><i class="fa-solid fa-cart-shopping"></i> Beli Sekarang</button>
+                                    </form>
+                                @else
+                                    <a href="{{ route('login') }}" class="btn"><i class="fa-solid fa-cart-shopping"></i> Beli Sekarang</a>
+                                @endauth
+                            </div>
+                        @empty
+                            <div class="text-center w-100">
+                                <p>Tidak ada produk tersedia saat ini.</p>
+                            </div>
+                        @endforelse
                     </div>
                 </div>
             </div>
-    </section>
-
-    <section class="products" data-aos="zoom-in-right" data-aos-delay="500">
-        <h2>Kebutuhan Pokok</h2>
-            <div class="container">
-                <div class="product-scroll">
-                    <div class="product-grid">
-                        <div class="product-card">
-                            <img src="../Test 2/image/masterpotato.jpg" alt="Produk 1">
-                            <h3>Indomilk Kental Manis Chocolate 370G</h3>
-                            <p>Deskripsi.</p>
-                            <span class="price">Rp 10.000</span>
-                            <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Beli Sekarang</button>
-                        </div>
-                        <div class="product-card">
-                            <img src="../Test 2/image/maxcorn.jpg" alt="Produk 2">
-                            <h3>Frisian Flag Kental Manis Coklat 370G</h3>
-                            <p>Deskripsi.</p>
-                            <span class="price">Rp 15.000</span>
-                            <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Beli Sekarang</button>
-                        </div>
-                        <div class="product-card">
-                            <img src="../Test 2/image/guribee.jpg" alt="Produk 3">
-                            <h3>Gulaku Gula Tebu (Kuning) 1000G</h3>
-                            <p>Deskripsi.</p>
-                            <span class="price">Rp 20.000</span>
-                            <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Beli Sekarang</button>
-                        </div>
-                        <div class="product-card">
-                            <img src="../Test 2/image/potabee.jpg" alt="Produk 4">
-                            <h3>Indomaret Beras Pulen Wangi Premium 5Kg</h3>
-                            <p>Deskripsi.</p>
-                            <span class="price">Rp 25.000</span>
-                            <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Beli Sekarang</button>
-                        </div>
-                        <div class="product-card">
-                            <img src="../Test 2/image/qtela-pedas.jpg" alt="Produk 4">
-                            <h3>Le Minerale Air Mineral 15L</h3>
-                            <p>Deskripsi.</p>
-                            <span class="price">Rp 25.000</span>
-                            <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Beli Sekarang</button>
-                        </div>
-                        <div class="product-card">
-                            <img src="../Test 2/image/chikiballs.jpg" alt="Produk 4">
-                            <h3>Frisian Flag Kental Manis 6X38G</h3>
-                            <p>Deskripsi.</p>
-                            <span class="price">Rp 25.000</span>
-                            <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Beli Sekarang</button>
-                        </div>
-                        <div class="product-card">
-                            <img src="../Test 2/image/chuba2.jpg" alt="Produk 4">
-                            <h3>Carnation Krimer Kental Manis 365G</h3>
-                            <p>Deskripsi.</p>
-                            <span class="price">Rp 25.000</span>
-                            <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Beli Sekarang</button>
-                        </div>
-                        <div class="product-card">
-                            <img src="../Test 2/image/pringles-bbq.webp" alt="Produk 4">
-                            <h3>Facial Tissue 2 Ply (2+1) 3X180's</h3>
-                            <p>Deskripsi.</p>
-                            <span class="price">Rp 25.000</span>
-                            <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Beli Sekarang</button>
-                        </div>
-                        <div class="product-card">
-                            <img src="../Test 2/image/pringles-ori.webp" alt="Produk 4">
-                            <h3>Facial Tissue 2 Ply (2+1) 3X180's</h3>
-                            <p>Deskripsi.</p>
-                            <span class="price">Rp 25.000</span>
-                            <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Beli Sekarang</button>
-                        </div>
-                        <div class="product-card">
-                            <img src="../Test 2/image/chitato-indomie.webp" alt="Produk 4">
-                            <h3>Facial Tissue 2 Ply (2+1) 3X180's</h3>
-                            <p>Deskripsi.</p>
-                            <span class="price">Rp 25.000</span>
-                            <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Beli Sekarang</button>
-                        </div>
-                        <div class="product-card">
-                            <img src="../Test 2/image/chitato-ayambbq.jpg" alt="Produk 4"">
-                            <h3>Facial Tissue 2 Ply (2+1) 3X180's</h3>
-                            <p>Deskripsi.</p>
-                            <span class="price">Rp 25.000</span>
-                            <button class="btn"><i class="fa-solid fa-cart-shopping"></i>   Beli Sekarang</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </section>
+        </section>
+    @endforelse
 
 </html>
 

@@ -11,13 +11,13 @@ body {
 
 /* Header style */
 header {
-    background-color: #2980B9;;
+    background-color: #2980b9;
     padding: 20px;
     color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    position: sticky; 
-    top: 0; 
-    z-index: 1000; 
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .container {
@@ -26,7 +26,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
 }
 
 .logo img {
@@ -52,28 +51,29 @@ nav ul li a {
 /* abu abu rgba(223, 223, 223, 0.711) */
 /* putih hover rgb(255, 255, 255) */
 
+/* BAGIAN NAVBAR */
 nav ul li a:hover {
     color: #f9cf1d;
     transition: color 0.3s ease 0.1s;
 }
 
-.strip-biru{
+.strip-kuning {
     background-color: #f9cf1d;
     height: 20px;
     width: auto;
     margin-bottom: 0;
     padding-bottom: 0;
 }
-.strip-biru-besar{
-    background-color: #2980B9;
+.strip-biru-besar {
+    background-color: #2980b9;
     height: 75em;
     width: auto;
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
-
-
+/* Dropdown Styles */
+/* Dropdown Specific Styles */
 
 /* HALAMAN BERANDA */
 /* Container utama carousel */
@@ -100,7 +100,8 @@ nav ul li a:hover {
     border-radius: 10px;
 }
 
-.prev, .next {
+.prev,
+.next {
     position: absolute;
     top: 45%;
     width: 50px;
@@ -124,7 +125,8 @@ nav ul li a:hover {
     right: 50px;
 }
 
-.prev:hover, .next:hover {
+.prev:hover,
+.next:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -134,26 +136,25 @@ nav ul li a:hover {
     align-items: center;
     justify-content: center;
     padding: 50px;
-    background-color: white ; 
+    background-color: white;
 }
 
 .hero-image img {
     width: 80%;
     height: auto;
     border-radius: 50%;
-    background-color: #2980B9;
+    background-color: #2980b9;
     padding: 10px;
-
 }
 
 .hero-content {
-    max-width: 50%; 
+    max-width: 50%;
 }
 
 @font-face {
-    font-family: 'Gotham'; 
-    src: url('font/gotham.ttf') format('truetype'); 
-    font-weight: normal; 
+    font-family: "Gotham";
+    src: url("font/gotham.ttf") format("truetype");
+    font-weight: normal;
     font-style: normal;
 }
 
@@ -164,20 +165,20 @@ nav ul li a:hover {
     font-size: 50px;
     font-weight: 300;
     margin-bottom: 20px;
-    color: #2980B9;
+    color: #2980b9;
 }
 
 .hero-content p {
     font-size: 17px;
     margin-bottom: 25px;
-    color: #666; 
+    color: #666;
 }
 
 .hero-content a {
     text-decoration: none;
     font-family: arial;
     font-weight: 600;
-    background-color: #2980B9;
+    background-color: #2980b9;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -185,20 +186,18 @@ nav ul li a:hover {
     font-size: 1em;
     cursor: pointer;
     transition: background-color 0.3s ease;
-
 }
 
 .hero-content a:hover {
-    background-color: #0056b3; 
+    background-color: #0056b3;
 }
-
 
 .potensi-section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 50px 10%; 
-    background-color: #2980B9;
+    padding: 50px 10%;
+    background-color: #2980b9;
     color: #ffffff;
     overflow: hidden;
 }
@@ -230,7 +229,7 @@ nav ul li a:hover {
     font-family: arial;
     font-weight: 600;
     background-color: white;
-    color: #2980B9;
+    color: #2980b9;
     padding: 10px 20px;
     border: none;
     border-radius: 20px;
@@ -269,7 +268,6 @@ nav ul li a:hover {
     /* position: relative;  */
 }
 
-
 .bright-tips-section {
     text-align: center;
     padding: 40px;
@@ -279,7 +277,7 @@ nav ul li a:hover {
 .bright-tips-section h2 {
     font-family: Gotham;
     font-size: 2rem;
-    color: #2980B9;
+    color: #2980b9;
     margin-bottom: 10px;
 }
 
@@ -335,7 +333,7 @@ nav ul li a:hover {
 
 .tip-content a {
     text-decoration: none;
-    color: #2980B9;
+    color: #2980b9;
     font-weight: bold;
     font-size: 0.9rem;
     transition: color 0.3s ease;
@@ -345,24 +343,7 @@ nav ul li a:hover {
     color: #0056b3;
 }
 
-
-/* PRODUK */
-
-/* .judul-products {
-    color: #2980B9 ;
-    font-size: 25px;
-    font-weight: 900;
-    padding: 40px 0;
-    max-width: fit-content;
-    margin: auto;
-}
-
-.deskripsi p {
-    max-width: fit-content;
-    margin: auto;
-    text-align: center;
-} */
-
+/* Product Section */
 .judul-product {
     text-align: center;
     margin: 60px 20px;
@@ -371,7 +352,7 @@ nav ul li a:hover {
 
 .judul-product h2 {
     font-size: 2em;
-    color: #2980B9;
+    color: #2980b9;
     margin-bottom: 10px;
 }
 
@@ -379,7 +360,7 @@ nav ul li a:hover {
     font-size: 17px;
     color: rgb(77, 77, 77);
     max-width: 790px;
-    margin: 20px auto 10px ;
+    margin: 20px auto 10px;
     line-height: 1.6;
 }
 
@@ -398,84 +379,422 @@ nav ul li a:hover {
     padding: 0;
 }
 
-/* isi produk */
 .products {
     padding: 40px 0;
     background-color: white;
     text-align: center;
 }
 
-.products h2{
+.products h2 {
     font-weight: bolder;
-    color: rgb(52, 59, 67);
+    color: #2980b9;
+    margin-bottom: 20px;
 }
 
 .product-scroll {
-    overflow-x: auto; 
-    padding: 10px 0;
-    scrollbar-width: thin; 
-    scrollbar-color: rgba(0, 0, 0, 0.5) rgba(0, 0, 0, 0); /* Untuk Firefox: warna scrollbar */
-}
-
-.product-scroll::-webkit-scrollbar-track {
-   display: none;
+    width: 100%;
+    overflow: hidden;
 }
 
 .product-grid {
-    display: flex; /* Ganti dari grid ke flexbox */
-    gap: 20px; /* Spasi antar produk */
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    min-width: 0;
+}
+
+.product-grid::-webkit-scrollbar {
+    height: 10px;
+}
+
+.product-grid::-webkit-scrollbar-thumb {
+    background-color: #2980b9;
+    border-radius: 5px;
+}
+
+.product-grid::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
 }
 
 .product-card {
-    min-width: 200px; /* Lebar minimum untuk card */
+    flex: 0 0 250px; /* Lebar default untuk desktop */
     background-color: white;
     border-radius: 10px;
-    /* border: 1px; */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.207);
-    padding: 15px;
-    text-align: center;
-    transition: transform 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 100%; /* Pastikan tidak melebihi parent */
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .product-card img {
-    width: 87%;
-    height: auto;
-    border-radius: 7px;
+    width: 100%;
+    height: 150px; /* Tinggi tetap untuk konsistensi */
+    object-fit: cover; /* Pastikan gambar tidak terdistorsi */
+    padding: 13px; /* Jarak dari tepi product-card */
+    border-radius: 10px; /* Sudut melengkung untuk gambar */
+}
+
+.product-card .product-info {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Pastikan konten mengisi ruang */
 }
 
 .product-card h3 {
-    margin: 15px 0 10px;
-    font-size: 1.1em;
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 8px;
+    margin-top: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Potong teks panjang */
 }
 
 .product-card p {
     color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Batasi deskripsi ke 2 baris */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product-card .price {
+    font-weight: bold;
+    color: #d32f2f;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.product-card .btn,
+.product-card a.btn {
+    background-color: #2980b9;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    display: block;
+    width: 100%; /* Full-width untuk tombol dan link */
+    box-sizing: border-box;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.product-card .btn:hover,
+.product-card a.btn:hover {
+    background-color: #d32f2f;
+    color: white;
+}
+
+.product-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0 15px 15px; /* Padding konsisten dengan product-info */
+}
+
+.product-card input[type="number"] {
+    width: 80px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 0.9rem;
+    align-self: center; /* Posisikan input di tengah */
+}
+
+/* Media Queries untuk Responsivitas */
+@media (max-width: 768px) {
+    .product-card {
+        flex: 0 0 200px; /* Kurangi lebar kartu untuk tablet */
+    }
+
+    .product-card img {
+        height: 120px; /* Kurangi tinggi gambar */
+    }
+
+    .product-card h3 {
+        font-size: 1rem; /* Kecilkan judul */
+    }
+
+    .product-card p {
+        font-size: 0.8rem; /* Kecilkan deskripsi */
+    }
+
+    .product-card .price {
+        font-size: 0.9rem;
+    }
+
+    .product-card .btn,
+    .product-card a.btn {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+
+    .product-card input[type="number"] {
+        width: 70px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .product-card {
+        flex: 0 0 160px; /* Kurangi lebar kartu untuk mobile */
+    }
+
+    .product-card img {
+        height: 100px; /* Kurangi tinggi gambar lebih lanjut */
+    }
+
+    .product-card h3 {
+        font-size: 0.9rem;
+    }
+
+    .product-card p {
+        font-size: 0.75rem;
+        -webkit-line-clamp: 1; /* Batasi deskripsi ke 1 baris */
+    }
+
+    .product-card .price {
+        font-size: 0.85rem;
+    }
+
+    .product-card .btn,
+    .product-card a.btn {
+        font-size: 0.75rem;
+        padding: 6px;
+    }
+
+    .product-card input[type="number"] {
+        width: 60px;
+        font-size: 0.75rem;
+    }
+}
+
+
+
+/* Transaction Section */
+.transaction-section {
+    padding: 40px 0;
+    background-color: #f8f9fa;
+}
+
+.transaction-header {
+    margin-bottom: 30px;
+}
+
+.transaction-title {
+    font-family: Gotham, sans-serif;
+    font-size: 2.5rem;
+    color: #2980b9;
     margin-bottom: 10px;
 }
 
-.price {
-    padding: 20px;
+.transaction-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.transaction-timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: #e9ecef;
+    z-index: 1;
+}
+
+.timeline-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    width: 25%;
+    text-align: center;
+}
+
+.timeline-item.active .timeline-icon {
+    background-color: #2980b9;
+    color: white;
+}
+
+.timeline-item.active .timeline-content h5 {
+    color: #2980b9;
+}
+
+.timeline-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #e9ecef;
+    color: #666;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.timeline-content h5 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.timeline-content p {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.transaction-product-img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.transaction-details .table th {
+    color: #333;
     font-weight: bold;
+}
+
+.transaction-details .price {
     color: #d32f2f;
 }
 
-.btn {
-    background-color: #2980B9;
+.transaction-summary .card {
+    font-size: 1rem;
+}
+
+.transaction-actions .btn-primary {
+    background-color: #2980b9;
+    border-color: #2980b9;
+    padding: 12px 30px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.transaction-actions .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.transaction-actions .btn-outline-primary {
+    color: #2980b9;
+    border-color: #2980b9;
+    padding: 12px 30px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.transaction-actions .btn-outline-primary:hover {
+    background-color: #2980b9;
     color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
 }
 
-.btn:hover {
-    background-color: #c62828;
+/* Media Queries for Transaction Section */
+@media (max-width: 768px) {
+    .transaction-title {
+        font-size: 2rem;
+    }
+
+    .timeline {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .timeline::before {
+        top: 0;
+        bottom: 0;
+        left: 25px;
+        width: 4px;
+        height: auto;
+    }
+
+    .timeline-item {
+        width: 100%;
+        flex-direction: row;
+        align-items: flex-start;
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+    .timeline-item .timeline-icon {
+        margin-right: 15px;
+        margin-bottom: 0;
+    }
+
+    .timeline-content {
+        flex-grow: 1;
+    }
+
+    .transaction-product-img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .transaction-actions .btn {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
 }
 
-.product-card:hover {
-    transform: scale(1.05);
+@media (max-width: 480px) {
+    .transaction-title {
+        font-size: 1.8rem;
+    }
+
+    .transaction-subtitle {
+        font-size: 1rem;
+    }
+
+    .transaction-product-img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .transaction-actions .btn {
+        font-size: 0.8rem;
+        padding: 8px 15px;
+        width: 100%;
+        margin-bottom: 10px;
+    }
 }
+
+
 
 /* LOKASI TOKO */
 .location {
@@ -484,14 +803,13 @@ nav ul li a:hover {
     text-align: center;
 }
 
-.location  h2 {
+.location h2 {
     font-family: Gotham;
     font-size: 40px;
-    color: #2980B9;
+    color: #2980b9;
     font-weight: 800;
     margin-bottom: 10px;
 }
-
 
 .store-table {
     width: 100%;
@@ -499,15 +817,16 @@ nav ul li a:hover {
     margin-top: 20px;
 }
 
-.store-table th, .store-table td {
-    border: 1px solid #2980B9;
+.store-table th,
+.store-table td {
+    border: 1px solid #2980b9;
     font-weight: bold;
     padding: 10px;
     text-align: center;
 }
 
 .store-table th {
-    background-color: #2980B9;
+    background-color: #2980b9;
     color: white;
 }
 
@@ -525,7 +844,7 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 50px 10%; 
+    padding: 50px 10%;
     background-color: white;
     overflow: hidden;
 }
@@ -535,7 +854,7 @@ nav ul li a:hover {
     height: 300px;
     border-radius: 50%;
     overflow: hidden;
-    background-color: #2980B9; /* Warna lingkaran */
+    background-color: #2980b9; /* Warna lingkaran */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -555,7 +874,7 @@ nav ul li a:hover {
 .text-content h2 {
     font-family: Gotham;
     line-height: -100px;
-    color: #2980B9;
+    color: #2980b9;
     font-size: 55px;
     margin-bottom: 10px;
 }
@@ -599,7 +918,7 @@ nav ul li a:hover {
     text-decoration: none;
     font-family: arial;
     font-weight: 600;
-    background-color: #2980B9;
+    background-color: #2980b9;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -610,14 +929,13 @@ nav ul li a:hover {
 }
 
 .apply-button:hover {
-    background-color: #0056b3; 
+    background-color: #0056b3;
 }
-
 
 .judul-promo h2 {
     font-family: Gotham;
     font-size: 40px;
-    color: #2980B9;
+    color: #2980b9;
     margin: 40px;
     text-align: center;
 }
@@ -657,7 +975,7 @@ nav ul li a:hover {
 
 .btn-promo {
     display: inline-block;
-    background-color: #2980B9;
+    background-color: #2980b9;
     color: white;
     padding: 10px 15px;
     text-decoration: none;
@@ -674,10 +992,137 @@ nav ul li a:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* bubble chat */
+#chat-bubble {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    background-color: #2980b9;
+    border-radius: 50%;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+}
+
+#chat-bubble i {
+    font-size: 24px; /* Menyesuaikan ukuran ikon */
+    color: white; /* Warna ikon */
+}
+
+#chat-box.hidden {
+    display: none !important; /* Sembunyikan jika hidden class diterapkan */
+}
+
+#chat-box {
+    display: none; /* Default tidak tampil */
+    position: fixed;
+    bottom: 90px; /* Sesuaikan agar di atas bubble */
+    right: 20px;
+    background-color: #fff;
+    border-radius: 10px; /* Membuat semua sudut melengkung */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    width: 300px; /* Lebar kolom chat */
+    max-height: 400px; /* Batas tinggi kolom chat */
+    overflow-y: auto;
+    z-index: 999;
+    animation: pop-up 0.3s ease-out; /* Animasi pop-up */
+}
+
+@keyframes pop-up {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#chat-box.show {
+    opacity: 1;
+    transform: translateY(0);
+    display: block;
+}
+
+.chat-header {
+    background-color: #007bff;
+    color: white;
+    padding: 12px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.chat-header button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.chat-header button {
+    color: white; /* Warna merah saat di-hover */
+}
+.chat-header button:hover {
+    color: black; /* Warna merah saat di-hover */
+}
+
+/* Input Container */
+.input-container {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+.input-container input {
+    width: 80%;
+    padding: 8px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    margin-right: 10px;
+}
+
+.input-container button {
+    padding: 8px 12px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.input-container button:hover {
+    background-color: #45a049;
+}
+
+/* Pesan Chat */
+#chat-messages {
+    padding: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.message {
+    margin: 10px 0;
+}
+
+.message.customer {
+    text-align: right;
+}
+
+.message.support {
+    text-align: left;
+}
 
 /* footer */
 footer {
-    background-color: #2980B9;
+    background-color: #2980b9;
     color: white;
     padding: 20px 0;
 }
@@ -710,9 +1155,9 @@ footer .container {
 }
 
 .social-icon {
-    width: 25px; 
+    width: 25px;
     height: auto;
-    transition: transform 0.3s ease; 
+    transition: transform 0.3s ease;
 }
 
 .social-icon:hover {

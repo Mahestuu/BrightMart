@@ -5,7 +5,7 @@
 @section('contents')
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <a href="{{ route('categoryadmin.create') }}" class="btn btn-primary"><i class="fas fa-plus"> </i> Add Category</a>
+        <a href="{{ route('categoryadmin.create') }}" class="btn btn-primary"><i class="fas fa-plus"> </i> Tambah Kategori</a>
     </div>
     <div class="card-body">
         @if (Session::has ('success'))
@@ -29,11 +29,11 @@
                             <th>{{$no++}}</th>
                             <td class="text-center">{{$row -> category_name}}</td>
                             <td class="text-center"> 
-                                <a href="{{route ('categoryadmin.edit', $row->category_id)}}" class="btn btn-warning">Edit</a>
+                                <a href="{{route ('categoryadmin.edit', $row->category_id)}}" class="btn btn-warning"><i class="fas fa-edit"></i></a>
                                 <form action="{{ route('categoryadmin.destroy', $row->category_id) }}" method="POST" style="display:inline;">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger delete-btn">Hapus</button>
+                                    <button type="submit" class="btn btn-danger delete-btn"><i class="fa-solid fa-trash"></i></button>
                                 </form>
                             </td>
                     @endforeach

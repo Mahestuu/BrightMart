@@ -41,11 +41,11 @@
                                 <img src="{{ asset('products/' . $row->product_image) }}" alt="{{ $row->product_name }}" width="100px">
                             </td>                            
                             <td class="text-center align-middle">
-                                <a href="{{ route('productadmin.edit', $row->product_id) }}" class="btn btn-warning">Edit</a>
+                                <a href="{{ route('productadmin.edit', $row->product_id) }}" class="btn btn-warning"><i class="fas fa-edit"></i></a>
                                 <form action="{{ route('productadmin.destroy', $row->product_id) }}" method="POST" style="display:inline;">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger delete-btn">Hapus</button>
+                                    <button type="submit" class="btn btn-danger delete-btn"><i class="fa-solid fa-trash"></i></button>
                                 </form>
                             </td>
                             

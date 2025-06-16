@@ -1,0 +1,23 @@
+# tests/tests_selenium/test_product.py
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from config import BASE_URL
+from utils import login
+
+def test_add_to_cart(driver):
+    login(driver)
+    driver.get(f"{BASE_URL}/product")
+    product_card = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.CLASS_NAME, "product-card"))
+    )
+    assert product_card, "Kartu produk tidak ditemukan"
+    qty_input = product_card.find_element(By.NAME, "qty")
+    qty_input.clear()
+    qty_input.send_keys("2")
+    add_button = product_card.find_element(By.CLASS_NAME, "btn")
+    add_button.click()
+    cart_count = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.CLASS_NAME, "cart-count"))
+    )
+    assert cart_count.text == "2", f"Jumlah item di keranjang tidak sesuai, ditemukan {cart_count.text}"

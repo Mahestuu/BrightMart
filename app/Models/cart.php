@@ -13,11 +13,15 @@ class cart extends Model
     protected $table = 'cart';
     protected $primaryKey = 'cart_id';
 
-    protected $fillable = ['cart_id','user_id', 'qty'];
+    protected $fillable = ['cart_id', 'user_id', 'product_id','qty'];
 
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
     }
-    
+
+    public function product()
+    {
+        return $this->belongsTo(products::class, 'product_id');
+    }
 }

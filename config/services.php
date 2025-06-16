@@ -31,4 +31,9 @@ return [
         ],
     ],
 
+    'deepseek' => [
+        'api_key' => env('sk-30db59231132435b9eef8ded15004f94'),
+        'endpoint' => env('DEEPSEEK_API_ENDPOINT', 'https://api.deepseek.com/v1/chat'),
+    ],
+
 ];

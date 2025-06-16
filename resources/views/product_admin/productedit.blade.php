@@ -14,7 +14,7 @@
             </div>
         @endif
 
-        <form method="POST" action="{{ route('productadmin.update', $data_product->product_id) }}">
+        <form method="POST" action="{{ route('productadmin.update', $product->product_id) }}" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             
@@ -23,42 +23,31 @@
                 <select name="category_id" id="category_id" class="form-control">
                     <option value="">--> Pilih Kategori <--</option>
                     @foreach ($categories as $category)
-                        <option value="{{ $category->category_id }}" {{ $data_product->category_id == $category->id ? 'selected' : '' }}>
+                        <option value="{{ $category->category_id }}" {{ $product->category_id == $category->id ? 'selected' : '' }}>
                             {{ $category->category_name }}
                         </option>
                     @endforeach
                 </select>
             </div>
 
-            {{-- <div class="form-group">
-                <label for="category_id">Category</label>
-                <select name="category_id" id="category_id" class="form-control" required>
-                    @foreach ($categories as $category)
-                        <option value="{{ $category->category_id }}" {{ $product->category_id == $category->category_id ? 'selected' : '' }}>
-                            {{ $category->category_name }}
-                        </option>
-                    @endforeach
-                </select>
-            </div> --}}
-
             <div class="form-group pt-4">
                 <label for="product_name">Nama Produk</label>
-                <input type="text" class="form-control" id="product_name" name="product_name" value="{{ $data_product->product_name }}" required>
+                <input type="text" class="form-control" id="product_name" name="product_name" value="{{ $product->product_name }}" required>
             </div>
 
             <div class="form-group">
                 <label for="product_description">Deskripsi</label>
-                <input type="text" class="form-control" id="product_description" name="product_description" value="{{ $data_product->product_description }}" required>
+                <input type="text" class="form-control" id="product_description" name="product_description" value="{{ $product->product_description }}" required>
             </div>
 
             <div class="form-group">
                 <label for="product_price">Harga</label>
-                <input type="number" class="form-control" id="product_price" name="product_price" value="{{ $data_product->product_price }}" required>
+                <input type="number" class="form-control" id="product_price" name="product_price" value="{{ $product->product_price }}" required>
             </div>
             
             <div class="form-group">
                 <label for="product_stock">Stok</label>
-                <input type="number" class="form-control" id="product_stock" name="product_stock" value="{{ $data_product->product_stock }}" required>
+                <input type="number" class="form-control" id="product_stock" name="product_stock" value="{{ $product->product_stock }}" required>
             </div>
 
             <div class="form-group">
@@ -68,7 +57,7 @@
             </div>
     
             <div class="form-group">
-                <img src="{{ asset('products/' . $data_product->product_image) }}" alt="{{ $data_product->product_name }}" width="100px" class="mt-2">
+                <img src="{{ asset('products/' . $product->product_image) }}" alt="{{ $product->product_name }}" width="100px" class="mt-2">
             </div>
 
             <button type="submit" class="btn btn-primary">Simpan Perubahan</button>

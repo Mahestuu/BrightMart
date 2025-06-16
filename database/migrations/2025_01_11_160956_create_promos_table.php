@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('promos', function (Blueprint $table) {
             $table->id('promo_id');
             $table->unsignedBigInteger('product_id');
-            $table->string('jenis_promo', length:200);
+            $table->string('jenis_promo');
+            $table->string('deskripsi_promo');
             $table->date('tanggal_mulai');
             $table->date('tanggal_akhir');
             $table->decimal('diskon');

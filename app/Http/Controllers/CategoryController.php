@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\categories;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -12,9 +11,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $data_category = categories::all();
-        return view('category_admin.index', compact('data_category'));
-
+        return view('utama.product');
     }
 
     /**
@@ -22,8 +19,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        $categories = categories::all();
-        return view('category_admin.addcategory', compact('categories'));
+        //
     }
 
     /**
@@ -31,15 +27,7 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'category_name' => 'required',
-        ]);
-
-        categories::create([
-            'category_name' => $request->input('category_name'),
-        ]);
-
-        return redirect()->route('categoryadmin.index')->with('success', 'Kategori Berhasil Dibuat.');
+        //
     }
 
     /**
@@ -55,8 +43,7 @@ class CategoryController extends Controller
      */
     public function edit(string $id)
     {
-        $categories = categories::findOrFail($id);
-        return view('category_admin.categoryedit', compact('categories'));
+        //
     }
 
     /**
@@ -64,17 +51,7 @@ class CategoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $request->validate([
-            'category_name' => 'required',
-        ]);
-
-        $categories = categories::findOrFail($id);
-
-        $categories->update([
-            'category_name' => $request->input('category_name'),
-        ]);
-        return redirect()->route('categoryadmin.index')
-                        ->with('success', 'Kategori berhasil diperbarui.');
+        //
     }
 
     /**
@@ -82,8 +59,6 @@ class CategoryController extends Controller
      */
     public function destroy(string $id)
     {
-        categories::find($id)->delete();
-        return redirect()->route('categoryadmin.index')
-                        ->with('success', 'Kategori Berhasil Dihapus.');
+        //
     }
 }

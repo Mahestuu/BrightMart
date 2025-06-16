@@ -6,7 +6,11 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "darkaonline/l5-swagger": "^9.0",
+        "darryldecode/cart": "^4.2",
+        "dedoc/scramble": "^0.12.22",
         "laravel/framework": "^11.0",
+        "laravel/sanctum": "^4.1",
         "laravel/tinker": "^2.9"
     },
     "require-dev": {
@@ -23,13 +27,18 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
-        }
+        },
+        "files": [
+            "app/Helpers/ChatHelper.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/"
         }
     },
+
+    
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('product_description');
             $table->decimal('product_price');
             $table->bigInteger('product_stock');
-            $table->string('product_image');
+            $table->string('product_image')->nullable();
             $table->foreign('category_id')->references('category_id')->on('categories')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
